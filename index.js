@@ -1,4 +1,9 @@
-Person = class {
+const Barber = require("/barber")
+const Customer = require("/custormer")
+const Chalk = require(Chalk)
+const Database = require("/database")
+
+class Person {
     constructor(name, age) {
       this.name = name
       this.age = age
@@ -12,7 +17,7 @@ Person = class {
     }
   }
 
-  Meetup = class {
+  class Meetup {
     constructor(name) {
       this.name = name
       this.attendees = []
@@ -22,14 +27,5 @@ Person = class {
     }
   }
 
-  printName = person => console.log(person.name)
-
-  const mert = new Person("Mert", 34)
-  const armagan = new Person("Armagan", 35
-  
-  mert.greet(armagan)
-  
-  const wtmb = new Meetup("WTM Berlin")
-  armagan.attend(wtmb)
-  mert.attend(wtmb)
+  printReservation = reservation => console.log(reservation.fullname)
 

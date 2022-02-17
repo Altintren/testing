@@ -1,0 +1,22 @@
+{
+  "name": "testing",
+  "version": "1.0.0",
+  "description": "Foobar is a Python library for dealing with word pluralization.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Altintren/testing.git"
+  },
+  "author": "Altintren",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Altintren/testing/issues"
+  },
+  "homepage": "https://github.com/Altintren/testing#readme",
+  "dependencies": {
+    "chalk": "^5.0.0"
+  }
+}
