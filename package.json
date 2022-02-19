@@ -18,5 +18,6 @@
   "homepage": "https://github.com/Altintren/testing#readme",
   "dependencies": {
     "chalk": "^5.0.0"
-  }
+  },
+  "devDependencies": {}
 }

@@ -1,15 +1,16 @@
-module.exports = customer
-
-Customer = class {
+module.exports = class Customer {
     constructor(fullname, phonenumber) {
-        this.name = fullname
+        this.fullname = fullname
         this.phonenumber = phonenumber
         this.reservations = []
     }
+
     book(reservation){
         this.reservations.push(reservation)
-        barber.reservation.push(this)
+        reservations.reservations.push(this)
+    }
+    
+    static create({ fullname, phonenumber, reservations }) {
+        return new Customer(fullname , phonenumber, reservations)
     }
 }
-
-

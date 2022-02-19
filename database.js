@@ -1,13 +1,19 @@
-const fs = require("fs")
+const fs = require('fs')
 
 const save = function(filename, data) {
-    fs.writeFileSync(filename, JSON.stringify(data))
-    console.log(data)
+  fs.writeFile(filename, JSON.stringify(data))
 }
 
-module.exports = { save }
+const load = function(filename, handler) {
+  fs.readFile(filename, 'utf8', (err, file) => {
+    if (err) {
+      console.log('there is a read error', err)
+      handler(err)
+      return
+    }
 
-const load = function(filename, data) {
-    return JSON.parse.fs.readFileSync(filename, "utf8")
-    console.log(data)
+    handler(null, JSON.parse(file));
+  })
 }
+
+module.exports = { save, load }
