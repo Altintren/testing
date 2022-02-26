@@ -8,11 +8,12 @@ const load = function(filename, handler) {
   fs.readFile(filename, 'utf8', (err, file) => {
     if (err) {
       console.log('there is a read error', err)
-      handler(err)
+      handler(err);
       return
     }
-
-    handler(null, JSON.parse(file));
+    else {
+      handler(null, JSON.parse(file));
+    }
   })
 }
 

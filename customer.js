@@ -1,5 +1,5 @@
 module.exports = class Customer {
-    constructor(fullname, phonenumber) {
+    constructor(fullname, phonenumber, reservations) {
         this.fullname = fullname
         this.phonenumber = phonenumber
         this.reservations = []
@@ -11,6 +11,6 @@ module.exports = class Customer {
     }
     
     static create({ fullname, phonenumber, reservations }) {
-        return new Customer(fullname , phonenumber, reservations)
+        return new Customer(fullname , phonenumber, reservations => [])
     }
 }
