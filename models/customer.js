@@ -1,16 +1,17 @@
 module.exports = class Customer {
-    constructor(fullname, phonenumber, reservations) {
+    constructor(fullname, phonenumber, reservations = [], id) {
         this.fullname = fullname
         this.phonenumber = phonenumber
-        this.reservations = []
+        this.reservations = reservations
+        this.id = id
     }
 
     book(reservation){
         this.reservations.push(reservation)
-        reservations.reservations.push(this)
+        reservation.reservations.push(this)
     }
     
-    static create({ fullname, phonenumber, reservations }) {
-        return new Customer(fullname , phonenumber, reservations => [])
+    static create({ fullname, phonenumber, reservations, id }) {
+        return new Customer(fullname , phonenumber, reservations, id)
     }
 }

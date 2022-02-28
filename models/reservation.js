@@ -1,19 +1,19 @@
 module.exports = class Reservation {
-    constructor(uid, customer, date, reservations) {
-        this.uid = this.uid
+    constructor(customer, date, reservations = [], id) {
         this.customer = customer
-        this.date = Date(year, month, day, hours)
-        this.reservations = []
+        this.date = Date()
+        this.reservations = reservations
+        this.id = this.id
     }
-    static create({ uid, customer, Date, reservations }) {
-        return new reservation( uid, customer, Date, reservations =>[])
+    static create({ customer, date, reservations, id }) {
+        return new reservation(customer, date, reservations, id)
     }
     printReservations(){
     this.reservations.forEach(printDetails)
     }
-    printDetails = customer => console.log(fullname, phonenumber)
+    printDetails = customer => console.log(fullname, phonenumber, id)
     
     report(){
-        console.log((this.uid), 'reservation is held at', (this.date), 'and number of reservations are', (this.reservations.length))
+        console.log((this.id), 'reservation is held at', (this.date), 'and number of reservations are', (this.reservations.length))
     }
 }
