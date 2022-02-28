@@ -1,7 +1,7 @@
 const fs = require('fs')
 
-const save = function(filename, data) {
-  fs.writeFile(filename, JSON.stringify(data))
+const save = function(filename, data, err) {
+  fs.writeFile(filename, JSON.stringify(data), (err, file))
 }
 
 const load = function(filename, handler) {

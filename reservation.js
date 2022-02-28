@@ -1,13 +1,12 @@
 module.exports = class Reservation {
-    constructor(customer, date, time) {
+    constructor(customer, date, reservations) {
         this.uid = this.uid
         this.customer = customer
         this.date = Date
-        this.time = time
         this.reservations = []
     }
-    static create({ customer, Date, time, reservations }) {
-        return new reservation(customer, Date, time, reservations)
+    static create({ customer, Date, reservations }) {
+        return new reservation(customer, Date, reservations)
     }
     printReservations(){
     this.reservations.forEach(printDetails)
