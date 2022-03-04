@@ -11,6 +11,7 @@ app.listen(3000, () => {
 })
 app.set("view engine", "pug")
 app.get("/", (req, res) => {
+    req.
     res.render("index")
 })
 
@@ -23,7 +24,7 @@ const catay = new Customer("Çağatay Uçar", "05451111111")
 const hakan = new Customer("Hakan Baykuşlar", "05452222222")
 
 //Creating dummy reservation
-const res1 = new Reservation(yasin, Date(2021, 10, 22, 11))
+const res1 = new Reservation(yasin, new Date(2022, 10, 22, 11))
 
 res1.report()
 
