@@ -1,10 +1,9 @@
-const Customer = require("./models/customer")
-const Reservation = require("./models/reservation")
-const CustomerService = require("./services/customer-service.js")
-const ReservationService = require("./services/reservation-service.js")
 const express = require("express")
-const Database = require("./database")
 const bodyParser = require("body-parser")
+const customerRouter = require('./routes/customer')
+const reservationRouter = require('./routes/reservation')
+
+require('./mongo-connection')
 
 const app = express()
 app.listen(3000, () => {
@@ -17,6 +16,7 @@ app.get("/", (req, res) => {
     res.render("index")
 })
 
-app.use(bodyParser.json())
+app.use('/customer', customerRouter)
+app.use('/reservation', reservationRouter)
 
-const people = CustomerService.findAll()
+app.use(bodyParser.json())
