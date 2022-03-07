@@ -2,5 +2,5 @@ extends layout
 
 block content
     h1 The number of the people is #{people.length}
-    each customer in customer
-      p #{customer.fullname}
+    each customer in people
+      p #{customer.fullname} #{customer.phonenumber}
