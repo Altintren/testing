@@ -1,17 +1,25 @@
-module.exports = class Customer {
-    constructor(fullname, phonenumber, reservations = [], id) {
-        this.fullname = fullname
-        this.phonenumber = phonenumber
-        this.reservations = reservations
-        this.id = id
-    }
+const mongoose = require("mongoose")
 
-    book(reservation){
-        this.reservations.push(reservation)
-        reservation.reservations.push(this)
-    }
-    
-    static create({ fullname, phonenumber, reservations, id }) {
-        return new Customer(fullname , phonenumber, reservations, id)
-    }
-}
+const CustomerSchema = new mongoose.Schema({
+    fullname: {
+        type: String,
+        required: true,
+        minlength: 2
+    },
+    phonenumber: {
+        type: Number,
+        required: true,
+        maxlength: 11 
+    },
+    reservations: [{
+        type: mongoose.SchemaTypes.ObjectId,
+        ref: "reservation",
+        autopopulate: true
+    }]
+})
+
+CustomerSchema.plugin(require("mongoose-autopopulate"))
+
+const CustomerModel = mongoose.model("Customer", CustomerSchema)
+
+module.exports = CustomerModel

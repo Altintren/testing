@@ -1,21 +1,10 @@
-module.exports = class Reservation {
-    constructor(customer, date, reservations = [], id) {
-        this.customer = customer
-        this.date = date
-        this.reservations = reservations
-        this.id = id
-    }
+const mongoose = require("mongoose")
 
-    static create({customer, date, reservations, id}) {
-        return new Reservation(customer, date, reservations, id)
-    }
+const ReservationSchema = new mongoose.Schema({
+    customer: String,
+    date: String    
+})
 
-    printReservations() {
-        //this.reservations.forEach(printDetails)
-    }
+const ReservationModel = mongoose.model("Reservation", ReservationSchema)
 
-
-    report() {
-        console.log((this.id), 'reservation is held at', (this.date), 'and number of reservations are', (this.reservations.length))
-    }
-}
+module.exports = ReservationModel
