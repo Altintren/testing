@@ -1,8 +1,12 @@
 const mongoose = require("mongoose")
 
 const ReservationSchema = new mongoose.Schema({
-    customer: String,
-    date: String    
+    customer: {
+        fullname: String,
+        phonenumber: String
+    },
+    date: String,
+    hour: Number
 })
 
 const ReservationModel = mongoose.model("Reservation", ReservationSchema)

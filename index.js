@@ -10,6 +10,7 @@ app.listen(3000, () => {
     console.log("Server listening..")
 })
 
+app.use(bodyParser.json())
 app.set("view engine", "pug")
 app.get("/", (req, res) => {
     req.
@@ -19,4 +20,3 @@ app.get("/", (req, res) => {
 app.use('/customer', customerRouter)
 app.use('/reservation', reservationRouter)
 
-app.use(bodyParser.json())
