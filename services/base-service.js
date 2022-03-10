@@ -1,15 +1,14 @@
 module.exports = class Service {
-    constructor(model, dbPath) {
+    constructor(model) {
         this.model = model
-        this.dbPath = dbPath
     }
 
     async findAll() {
-        return this.model.find()
+        return this.model.find({})
     }
 
     async add(item) {
-        return this.model.create()
+        return this.model.create(item)
     }
 
     async  del(itemId) {

@@ -18,8 +18,7 @@ router.get('/:id', async (req, res) => {
 // Customer will select date&time and book a reservation.
 router.post('/', async (req, res) => {
   const reservation = await ReservationService.add(req.body)
-  const user = await CustomerService.add(req.params.id)
-  await CustomerService.book(user, date, reservation)
+
   res.send(reservation)
 })
 
