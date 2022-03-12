@@ -13,7 +13,7 @@ const CustomerSchema = new mongoose.Schema({
     },
     reservations: [{
         type: mongoose.SchemaTypes.ObjectId,
-        ref: "reservation",
+        ref: "Reservation",
         autopopulate: true
     }]
 })
