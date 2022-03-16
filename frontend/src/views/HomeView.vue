@@ -8,7 +8,7 @@ export default {
     HelloWorld
   },
   computed: {
-    ...mapState(['counter'])
+    ...mapState(['reservations'])
   },
   methods: {
     ...mapActions(['fetchReservations'])
@@ -22,6 +22,6 @@ export default {
 <template lang="pug">
   <main>
   h1 Hello World
-  div {{ counter }}
+  div {{ reservations }}
   </main>
 </template>
