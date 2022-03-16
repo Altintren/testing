@@ -2,4 +2,5 @@
 "eslint.workingDirectories": [
         {"mode": "auto"}
     ],
+"vetur.ignoreProjectWarning": true,
 }
